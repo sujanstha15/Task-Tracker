@@ -66,7 +66,7 @@ public class TaskService {
     //get all task by date
     public List<Task> getCreatedDate(LocalDateTime createdAt){
 
-        List<Task> byCreatedAt = taskRepository.findByCreateAt(createdAt);
+        List<Task> byCreatedAt = taskRepository.findByCreatedAt(createdAt);
         return byCreatedAt;
     }
 

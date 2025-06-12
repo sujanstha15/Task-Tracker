@@ -26,7 +26,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findByStatus(TaskStatus status); //status is our field name from Task, this is rule
 
-    List<Task> findByCreateAt(LocalDateTime localDateTime);
+    List<Task> findByCreatedAt(LocalDateTime localDateTime);
     //we are following pattern above
     //after findBy, they all are the name of entity
 

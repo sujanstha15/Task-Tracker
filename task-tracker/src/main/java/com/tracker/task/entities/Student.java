@@ -15,6 +15,12 @@ public class Student {
 
     private String email;
 
+
+    //A student has certificate
+    //here we can do mapping using annotation
+    @OneToOne(mappedBy="student")
+    private Certificate certificate;
+
     public int getId() {
         return id;
     }
@@ -37,5 +43,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Certificate getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(Certificate certificate) {
+        this.certificate = certificate;
     }
 }
