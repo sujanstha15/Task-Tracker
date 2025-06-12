@@ -21,6 +21,12 @@ public class Student {
     @OneToOne(mappedBy="student")
     private Certificate certificate;
 
+    //i need to do many to one
+    @ManyToOne
+    //if we want to change the name of column
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     public int getId() {
         return id;
     }

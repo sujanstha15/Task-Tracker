@@ -53,5 +53,11 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 		certificateRepo.save(certificate);
 		System.out.println("Certificate also saved");*/
+//		Student student = studentRepo.findById(5).get();
+//		System.out.println(student.getName());
+//
+//		Certificate certificate = student.getCertificate();
+//		System.out.println(certificate.getTitle());
+//		//the above two, we can do vice-versa
 	}
 }
