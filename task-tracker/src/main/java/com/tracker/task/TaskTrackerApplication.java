@@ -36,6 +36,8 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 	@Autowired
 	private CategoryRepo categoryRepo;
+
+
 	@Override
 	public void run(String... args) throws Exception{
 
@@ -98,17 +100,17 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 
 //creating category
-		Category category1 = new Category();
-		category1.setTitle("Trending)");
-
-		Category category2 = new Category();
-		category2.setTitle("Mobile Phones");
-
-		Product product1 = new Product();
-		product1.setName("Iphone 13");
-
-		Product product2  = new Product();
-		product2.setName("Hp Pavallion");
+//		Category category1 = new Category();
+//		category1.setTitle("Trending)");
+//
+//		Category category2 = new Category();
+//		category2.setTitle("Mobile Phones");
+//
+//		Product product1 = new Product();
+//		product1.setName("Iphone 13");
+//
+//		Product product2  = new Product();
+//		product2.setName("Hp Pavallion");
 
 		//mapping these and then save
 
@@ -124,27 +126,14 @@ public class TaskTrackerApplication implements CommandLineRunner {
 //		product2.getCategories().add(category1);
 //		category1.getProducts().add(product2);
 
-		//using method will be easiter
-		product1.addCategory(category1);
-		product1.addCategory(category2);
-		product2.addCategory(category1);
-
-		//save
-	productRepo.save(product1);
-	productRepo.save(product2);//we are just saving the product only because, the Categories will be automaitcally updated as we have used CascadeALl
-
-
-
-
-
-
-
-
-
-
-
-
-
+//		//using method will be easiter
+//		product1.addCategory(category1);
+//		product1.addCategory(category2);
+//		product2.addCategory(category1);
+//
+//		//save
+//	productRepo.save(product1);
+//	productRepo.save(product2);//we are just saving the product only because, the Categories will be automaitcally updated as we have used CascadeALl
 
 
 
