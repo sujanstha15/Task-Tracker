@@ -115,18 +115,23 @@ public class TaskTrackerApplication implements CommandLineRunner {
 		//to save, we need productRepo and categoryRepo
 
 		//mapping
-		product1.getCategories().add(category1);
-		product1.getCategories().add(category2);
+//		product1.getCategories().add(category1);
+//		product1.getCategories().add(category2);
+//
+//		category1.getProducts().add(product1);
+//		category2.getProducts().add(product1);
+//
+//		product2.getCategories().add(category1);
+//		category1.getProducts().add(product2);
 
-		category1.getProducts().add(product1);
-		category2.getProducts().add(product1);
-
-		product2.getCategories().add(category1);
-		category1.getProducts().add(product2);
+		//using method will be easiter
+		product1.addCategory(category1);
+		product1.addCategory(category2);
+		product2.addCategory(category1);
 
 		//save
-		productRepo.save(product1);
-		productRepo.save(product2);//we are just saving the product only because, the Categories will be automaitcally updated as we have used CascadeALl
+	productRepo.save(product1);
+	productRepo.save(product2);//we are just saving the product only because, the Categories will be automaitcally updated as we have used CascadeALl
 
 
 

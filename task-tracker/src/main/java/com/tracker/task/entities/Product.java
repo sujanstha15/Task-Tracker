@@ -24,6 +24,11 @@ public class Product {
     )
     private List<Category> categories = new ArrayList<>();
 
+    public void addCategory(Category category){
+        this.categories.add(category);
+        category.getProducts().add(this);
+    }
+
     public int getId() {
         return id;
     }
