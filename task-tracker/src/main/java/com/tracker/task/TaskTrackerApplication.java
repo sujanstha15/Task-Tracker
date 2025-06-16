@@ -1,12 +1,7 @@
 package com.tracker.task;
 
-import com.tracker.task.entities.Category;
-import com.tracker.task.entities.Certificate;
-import com.tracker.task.entities.Department;
-import com.tracker.task.entities.Student;
-import com.tracker.task.repositories.CertificateRepo;
-import com.tracker.task.repositories.DepartmentRepo;
-import com.tracker.task.repositories.StudentRepo;
+import com.tracker.task.entities.*;
+import com.tracker.task.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -35,6 +30,12 @@ public class TaskTrackerApplication implements CommandLineRunner {
 	@Autowired //we are doing autowired so that we can get that object
 	private DepartmentRepo departmentRepo;
 
+
+	@Autowired
+	private ProductRepo productRepo;
+
+	@Autowired
+	private CategoryRepo categoryRepo;
 	@Override
 	public void run(String... args) throws Exception{
 
@@ -98,10 +99,43 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 //creating category
 		Category category1 = new Category();
-		category1.setTitle("Trendind)");
+		category1.setTitle("Trending)");
 
 		Category category2 = new Category();
 		category2.setTitle("Mobile Phones");
+
+		Product product1 = new Product();
+		product1.setName("Iphone 13");
+
+		Product product2  = new Product();
+		product2.setName("Hp Pavallion");
+
+		//mapping these and then save
+
+		//to save, we need productRepo and categoryRepo
+
+		//mapping
+		product1.getCategories().add(category1);
+		product1.getCategories().add(category2);
+
+		category1.getProducts().add(product1);
+		category2.getProducts().add(product1);
+
+		product2.getCategories().add(category1);
+		category1.getProducts().add(product2);
+
+		//save
+		productRepo.save(product1);
+		productRepo.save(product2);//we are just saving the product only because, the Categories will be automaitcally updated as we have used CascadeALl
+
+
+
+
+
+
+
+
+
 
 
 
