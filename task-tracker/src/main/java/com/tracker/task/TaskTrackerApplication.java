@@ -1,8 +1,11 @@
 package com.tracker.task;
 
+import com.tracker.task.entities.Category;
 import com.tracker.task.entities.Certificate;
+import com.tracker.task.entities.Department;
 import com.tracker.task.entities.Student;
 import com.tracker.task.repositories.CertificateRepo;
+import com.tracker.task.repositories.DepartmentRepo;
 import com.tracker.task.repositories.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,6 +13,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class TaskTrackerApplication implements CommandLineRunner {
@@ -26,6 +31,9 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 	@Autowired
 	private CertificateRepo certificateRepo;
+
+	@Autowired //we are doing autowired so that we can get that object
+	private DepartmentRepo departmentRepo;
 
 	@Override
 	public void run(String... args) throws Exception{
@@ -59,5 +67,48 @@ public class TaskTrackerApplication implements CommandLineRunner {
 //		Certificate certificate = student.getCertificate();
 //		System.out.println(certificate.getTitle());
 //		//the above two, we can do vice-versa
+
+//create a department
+//		Department department = new Department();
+//		department.setName("CSE");
+//		department.setCode("CS101");
+//
+//		//creating many students under department
+//		Student student1 = new Student();
+//		student1.setName("Sujan Shrestha");
+//		student1.setEmail("shresthas4");
+//		student1.setDepartment(department);
+//
+//		Student student2 = new Student();
+//		student2.setName("Yashoda Dangal");
+//		student2.setEmail("dangalyd");
+//		student2.setDepartment(department);
+//
+//		List<Student> studentList = new ArrayList<>();
+//		studentList.add(student1);
+//		studentList.add(student2);
+//
+//		department.setStudents(studentList);
+//
+//		Department savedDepartment =  departmentRepo.save(department);
+//
+//		System.out.println("Department created");
+
+
+
+//creating category
+		Category category1 = new Category();
+		category1.setTitle("Trendind)");
+
+		Category category2 = new Category();
+		category2.setTitle("Mobile Phones");
+
+
+
+
+
+
+
+
 	}
 }

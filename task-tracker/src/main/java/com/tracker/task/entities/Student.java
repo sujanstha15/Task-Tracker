@@ -25,7 +25,7 @@ public class Student {
     @ManyToOne
     //if we want to change the name of column
     @JoinColumn(name = "department_id")
-    private Department department;
+    private Department department; //since we have used mappedBy in Department class, this will own the relationship./
 
     public int getId() {
         return id;
@@ -57,5 +57,13 @@ public class Student {
 
     public void setCertificate(Certificate certificate) {
         this.certificate = certificate;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
